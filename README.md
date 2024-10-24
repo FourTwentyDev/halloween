@@ -42,7 +42,7 @@ A Halloween-themed event script for FiveM servers that adds trick-or-treating, p
 cd resources
 git clone https://github.com/FourTwentyDev/halloween
 ```
-2. Add `ensure halloween` to your `server.cfg`
+2. Add `ensure fourtwenty_halloween` to your `server.cfg`
 3. Configure the script using the `config.lua` file
 4. Start/restart your server
 
