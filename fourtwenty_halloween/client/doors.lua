@@ -68,7 +68,7 @@ Citizen.CreateThread(function()
     TriggerServerEvent('halloween:requestSync')
     
     while true do
-        Citizen.Wait(0)
+        interval = 1000
         local playerPed = PlayerPedId()
         local playerPos = GetEntityCoords(playerPed)
         
@@ -77,6 +77,7 @@ Citizen.CreateThread(function()
                 local dist = #(playerPos - vector3(coords.x, coords.y, coords.z))
                 
                 if dist < Config.SearchRadius then
+                    interval = 0
                     DrawText3D(coords.x, coords.y, coords.z + 1.0, _("press_trick_or_treat"))
                     
                     if IsControlJustPressed(0, Config.CollectKey) and not IsEntityPlayingAnim(playerPed, knockAnimDict, knockAnimName, 3) then
@@ -86,5 +87,6 @@ Citizen.CreateThread(function()
                 end
             end
         end
+        Citizen.Wait(interval)
     end
 end)

@@ -196,7 +196,7 @@ end)
 
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(0)
+        interval = 1000
         local playerPos = GetEntityCoords(PlayerPedId())
         
         for index, propData in pairs(Client.activeProps) do
@@ -204,6 +204,7 @@ Citizen.CreateThread(function()
                 local dist = #(playerPos - vector3(propData.coords.x, propData.coords.y, propData.coords.z))
                 
                 if dist < Config.SearchRadius then
+                    interval = 0
                     local objectCoords = GetEntityCoords(propData.entity)
                     DrawText3D(objectCoords.x, objectCoords.y, objectCoords.z + 1.0, _('press_collect_pumpkin'))
                     
@@ -227,5 +228,6 @@ Citizen.CreateThread(function()
                 end
             end
         end
+        Citizen.Wait(interval)
     end
 end)
