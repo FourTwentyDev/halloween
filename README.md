@@ -134,7 +134,7 @@ Locales['en'] = {
 ## Support 💡
 
 For support, please:
-1. Join our [Discord](https://discordgg/fourtwenty)
+1. Join our [Discord](https://discord.gg/fourtwenty)
 2. Visit our website: [www.fourtwenty.dev](https://fourtwenty.dev)
 3. Create an issue on GitHub
 
