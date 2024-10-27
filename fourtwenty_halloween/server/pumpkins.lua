@@ -105,3 +105,23 @@ Citizen.CreateThread(function()
         saveJsonFile()
     end
 end)
+
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(20000) 
+        local currentTime = os.time()
+        local changed = false
+        
+        for index, state in pairs(Server.pumpkinStates) do
+            if not state.active and state.respawnTime > 0 and currentTime >= state.respawnTime then
+                state.active = true
+                state.respawnTime = 0
+                changed = true
+            end
+        end
+        
+        if changed then
+            TriggerClientEvent('halloween:syncPumpkins', -1, Server.pumpkinStates)
+        end
+    end
+end)

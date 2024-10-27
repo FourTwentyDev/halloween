@@ -196,7 +196,7 @@ end)
 
 Citizen.CreateThread(function()
     while true do
-        interval = 1000
+        local interval = 1000
         local playerPos = GetEntityCoords(PlayerPedId())
         
         for index, propData in pairs(Client.activeProps) do

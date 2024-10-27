@@ -1,9 +1,9 @@
 Config = {}
 Config.Debug = false
-Config.RespawnTime = 10 
+Config.RespawnTime = 1 
 Config.SearchRadius = 2.0 
 Config.CollectKey = 38 
-Config.Locale = "de"
+Config.Locale = "en"
 
 Config.Rewards = {
     pumpkins = {
